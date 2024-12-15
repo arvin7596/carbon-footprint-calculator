@@ -43,7 +43,8 @@
                                 <input type="number" id="fuel" class="form-control mb-2" placeholder="$">
                             </div>
                             <div class="ml-auto">
-                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                                <button class="btn btn-primary" type="button"
+                                    onclick="submitEnergy()">Calculate</button>
                             </div>
                         </form>
                     </div>
@@ -88,10 +89,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="energyBarChart"></canvas>
+                                <canvas id="wasteBarChart"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="energyStackedChart"></canvas>
+                                <canvas id="wastePieChart" width="200" height="200"></canvas>
                             </div>
                         </div>
                     </div>
@@ -121,10 +122,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="energyBarChart"></canvas>
+                                <canvas id="travelBarChart"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="energyStackedChart"></canvas>
+                                <canvas id="travelStackedChart"></canvas>
                             </div>
                         </div>
                     </div>
@@ -137,8 +138,8 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="chart.js"></script>
     <script src="script.js"></script>
+    <script src="chart.js"></script>
 </body>
 
 </html>
