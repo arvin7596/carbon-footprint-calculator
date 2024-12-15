@@ -11,6 +11,9 @@ function submitEnergy() {
   })
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
+      energyChart.data.datasets[0].data = [result.electricity_usage];
+      energyChart.data.datasets[1].data = [result.gas_usage];
+      energyChart.data.datasets[2].data = [result.fuel_usage];
+      energyChart.update();
     });
 }
