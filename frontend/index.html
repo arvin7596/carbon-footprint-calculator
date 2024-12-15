@@ -4,11 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carbon Footprint Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    Hello World
+    <div class="container mt-5">
+        <h1 class="text-center">Carbon Footprint Calculator</h1>
+        <ul class="nav nav-tabs" id="navlist" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="energy-tab" data-bs-toggle="tab" data-bs-target="#energy"
+                    type="button" role="tab" aria-controls="energy" aria-selected="true">Energy Usage</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="waste-tab" data-bs-toggle="tab" data-bs-target="#waste" type="button"
+                    role="tab" aria-controls="waste" aria-selected="false">Waste</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel" type="button"
+                    role="tab" aria-controls="travel" aria-selected="false">Travel</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="energyTabContent">
+            <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="energy-tab">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <label for="electricity" class="form-label">Electricity</label>
+                                <input type="number" id="electricity" class="form-control mb-2" placeholder="$">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="gas" class="form-label">Gas</label>
+                                <input type="number" id="gas" class="form-control mb-2" placeholder="$">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="fuel" class="form-label">Fuel</label>
+                                <input type="number" id="fuel" class="form-control mb-2" placeholder="$">
+                            </div>
+                            <div class="ml-auto">
+                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="waste" role="tabpanel" aria-labelledby="waste-tab">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="waste" class="form-label">Waste generated per month</label>
+                                <input type="number" id="waste" class="form-control mb-2" placeholder="kg">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="recycle" class="form-label">Waste recycled or composted per
+                                    month</label>
+                                <input type="number" id="recycle" class="form-control mb-2" placeholder="%">
+                            </div>
+
+                            <div class="ml-auto">
+                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="traveled" class="form-label">Kilometers traveled per year</label>
+                                <input type="number" id="traveled" class="form-control mb-2" placeholder="km">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fuel-efficiency" class="form-label">Average fuel efficiency </label>
+                                <input type="number" id="fuel-efficiency" class="form-control mb-2"
+                                    placeholder="L/100km">
+                            </div>
+                            <div class="ml-auto">
+                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Results Section -->
+        <div class="mt-5">
+            <h3>Results</h3>
+            <div id="resultsGrid" class="row"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
