@@ -34,11 +34,11 @@ def calculate_waste(waste,recycle,month):
 @app.route('/calculate-travel', methods=['POST'])
 def process_travel_data():
     data = request.json
-    result = calculate_waste(data['waste'],data['recycle'],12)
+    result = calculate_travel(data['traveled'],data['vehicles'])
     return jsonify(result)
 
-def calculate_travel(traveled,fuel):
-    co2_business_travel = traveled * ( 1 / fuel ) * 2.31
+def calculate_travel(traveled,vehicles):
+    co2_business_travel = traveled * ( 1 / vehicles ) * 2.31
     return {"co2_business_travel" :  co2_business_travel}
 
 
