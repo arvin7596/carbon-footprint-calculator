@@ -45,3 +45,20 @@ function submitWaste() {
       remainedWasteChart.update();
     });
 }
+
+function submitTravel() {
+  const data = {
+    traveled: Number(document.getElementById("kilometers-traveled").value),
+    vehicles: Number(document.getElementById("vehicles-fuel").value),
+  };
+  fetch("http://127.0.0.1:5000/calculate-travel", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      travelEmissionChart.data.datasets[0].data = [result.co2_business_travel];
+      travelEmissionChart.update();
+    });
+}
