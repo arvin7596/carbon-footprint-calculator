@@ -1,10 +1,10 @@
 //-------------- Energy Usage Charts ------------------------
 
 // ----Bar Chart----
-const energyBarChartElement = document
-  .getElementById("energyBarChart")
+const energyChartElement = document
+  .getElementById("energy-chart-element")
   .getContext("2d");
-const energyConsumptionChart = new Chart(energyBarChartElement, {
+const energyConsumptionChart = new Chart(energyChartElement, {
   type: "bar",
   data: {
     labels: ["Energy Usage"],
@@ -40,10 +40,10 @@ const energyConsumptionChart = new Chart(energyBarChartElement, {
 
 // ----Stacked Chart----
 
-const energyStackedChartElement = document
-  .getElementById("energyStackedChart")
+const totalEnergyChartElement = document
+  .getElementById("total-energy-chart-element")
   .getContext("2d");
-const totalEnergyConsumptionChart = new Chart(energyStackedChartElement, {
+const totalEnergyConsumptionChart = new Chart(totalEnergyChartElement, {
   type: "bar",
   data: {
     labels: ["Energy Usage"],
@@ -95,7 +95,7 @@ const totalEnergyConsumptionChart = new Chart(energyStackedChartElement, {
 
 // ----Bar Chart----
 const wasteRecycledChartElement = document
-  .getElementById("wasteRecycledChartElement")
+  .getElementById("waste-recycle-chart-element")
   .getContext("2d");
 const wasteRecycleChart = new Chart(wasteRecycledChartElement, {
   type: "bar",
@@ -121,7 +121,7 @@ const wasteRecycleChart = new Chart(wasteRecycledChartElement, {
 // ----Bar Chart----
 
 const remainedWasteChartElement = document
-  .getElementById("remainedWasteChartElement")
+  .getElementById("remained-waste-chart-element")
   .getContext("2d");
 const remainedWasteChart = new Chart(remainedWasteChartElement, {
   type: "bar",
@@ -146,9 +146,9 @@ const remainedWasteChart = new Chart(remainedWasteChartElement, {
 // ----Bar Chart----
 
 const travelEmissionChartElement = document
-  .getElementById("travelEmissionChartElement")
+  .getElementById("travel-emission-chart-element")
   .getContext("2d");
-const travelEmissionChart = new Chart(remainedWasteChartElement, {
+const travelEmissionChart = new Chart(travelEmissionChartElement, {
   type: "bar",
   data: {
     labels: ["Travel"],

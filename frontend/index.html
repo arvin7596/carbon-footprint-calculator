@@ -24,8 +24,9 @@
                 <button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel" type="button"
                     role="tab" aria-controls="travel" aria-selected="false">Travel</button>
             </li>
+
         </ul>
-        <div class="tab-content" id="energyTabContent">
+        <div class="tab-content" id="energy-tab-content">
             <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="energy-tab">
                 <div class="card mt-4">
                     <div class="card-body">
@@ -54,10 +55,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="energyBarChart" height="200"></canvas>
+                                <canvas id="energy-chart-element" height="200"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="energyStackedChart" height="200"></canvas>
+                                <canvas id="total-energy-chart-element" height="200"></canvas>
                             </div>
                         </div>
                     </div>
@@ -89,10 +90,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="wasteRecycledChartElement" height="200"></canvas>
+                                <canvas id="waste-recycle-chart-element" height="200"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="remainedWasteChartElement" height="200"></canvas>
+                                <canvas id="remained-waste-chart-element" height="200"></canvas>
                             </div>
                         </div>
                     </div>
@@ -104,28 +105,27 @@
                     <div class="card-body">
                         <form class="row g-3">
                             <div class="col-md-6">
-                                <label for="traveled" class="form-label">Kilometers traveled per year</label>
-                                <input type="number" id="traveled" class="form-control mb-2" placeholder="km">
+                                <label for="kilometers-traveled" class="form-label">Kilometers traveled per year</label>
+                                <input type="number" id="kilometers-traveled" class="form-control mb-2"
+                                    placeholder="km">
                             </div>
                             <div class="col-md-6">
-                                <label for="fuel-efficiency" class="form-label">Average fuel efficiency </label>
-                                <input type="number" id="fuel-efficiency" class="form-control mb-2"
-                                    placeholder="L/100km">
+                                <label for="vehicles-fuel" class="form-label">Average fuel efficiency </label>
+                                <input type="number" id="vehicles-fuel" class="form-control mb-2" placeholder="L/100km">
                             </div>
                             <div class="ml-auto">
-                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                                <button class="btn btn-primary" type="button"
+                                    onclick="submitTravel()">Calculate</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="card mt-8">
+                <div class="card mt-5">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-6">
-                                <canvas id="travelBarChart"></canvas>
-                            </div>
-                            <div class="col-6">
-                                <canvas id="travelStackedChart"></canvas>
+                        <div class="row justify-content-center">
+
+                            <div class="col-10">
+                                <canvas id="travel-emission-chart-element" height="150"></canvas>
                             </div>
                         </div>
                     </div>
