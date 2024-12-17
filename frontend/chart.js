@@ -1,12 +1,10 @@
-// const energy = JSON.parse(localStorage.getItem("energy_calculated"));
-
 //-------------- Energy Usage Charts ------------------------
 
 // ----Bar Chart----
-const energyBarChart = document
+const energyBarChartElement = document
   .getElementById("energyBarChart")
   .getContext("2d");
-const energyChart = new Chart(energyBarChart, {
+const energyConsumptionChart = new Chart(energyBarChartElement, {
   type: "bar",
   data: {
     labels: ["Energy Usage"],
@@ -42,10 +40,10 @@ const energyChart = new Chart(energyBarChart, {
 
 // ----Stacked Chart----
 
-const energyStackedChart = document
+const energyStackedChartElement = document
   .getElementById("energyStackedChart")
   .getContext("2d");
-new Chart(energyStackedChart, {
+const totalEnergyConsumptionChart = new Chart(energyStackedChartElement, {
   type: "bar",
   data: {
     labels: ["Energy Usage"],
@@ -96,14 +94,16 @@ new Chart(energyStackedChart, {
 //----------------------------- Waste Charts -----------------------------
 
 // ----Bar Chart----
-const wasteBarChart = document.getElementById("wasteBarChart").getContext("2d");
-new Chart(wasteBarChart, {
+const wasteRecycledChartElement = document
+  .getElementById("wasteRecycledChartElement")
+  .getContext("2d");
+const wasteRecycleChart = new Chart(wasteRecycledChartElement, {
   type: "bar",
   data: {
     labels: ["Waste"],
     datasets: [
-      { label: "Waste", data: [65], backgroundColor: "#0384ff" },
-      { label: "Recycled/Composted", data: [28], backgroundColor: "#007726" },
+      { label: "Waste", data: [0], backgroundColor: "#0384ff" },
+      { label: "Recycled/Composted", data: [0], backgroundColor: "#007726" },
     ],
   },
   options: {
@@ -118,28 +118,25 @@ new Chart(wasteBarChart, {
   },
 });
 
-// ----Stacked Chart----
+// ----Bar Chart----
 
-const wastePieChart = document.getElementById("wastePieChart").getContext("2d");
-new Chart(wastePieChart, {
-  type: "pie",
+const remainedWasteChartElement = document
+  .getElementById("remainedWasteChartElement")
+  .getContext("2d");
+const remainedWasteChart = new Chart(remainedWasteChartElement, {
+  type: "bar",
   data: {
-    labels: ["Waste", "Recycled/Composted"],
-    datasets: [
-      {
-        data: [60, 40],
-        backgroundColor: ["#0384ff", "#007726"],
-        // borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderWidth: 1,
-      },
-    ],
+    labels: ["Waste"],
+    datasets: [{ label: "Waste", data: [0], backgroundColor: "#0384ff" }],
   },
   options: {
+    responsive: true,
     plugins: {
-      title: { display: true, text: "Waste vs Recycle" },
+      title: { display: true, text: "Waste" },
       tooltip: { mode: "index", intersect: false },
       legend: { position: "top" },
     },
     responsive: true,
+    scales: { x: { stacked: false }, y: { stacked: false } },
   },
 });

@@ -54,10 +54,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="energyBarChart"></canvas>
+                                <canvas id="energyBarChart" height="200"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="energyStackedChart"></canvas>
+                                <canvas id="energyStackedChart" height="200"></canvas>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <form class="row g-3">
                             <div class="col-md-6">
                                 <label for="waste" class="form-label">Waste generated per month</label>
-                                <input type="number" id="waste" class="form-control mb-2" placeholder="kg">
+                                <input type="number" id="waste-generated" class="form-control mb-2" placeholder="kg">
                             </div>
                             <div class="col-md-6">
                                 <label for="recycle" class="form-label">Waste recycled or composted per
@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="ml-auto">
-                                <button class="btn btn-primary" onclick="submitEnergy()">Calculate</button>
+                                <button class="btn btn-primary" type="button" onclick="submitWaste()">Calculate</button>
                             </div>
                         </form>
                     </div>
@@ -89,10 +89,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <canvas id="wasteBarChart"></canvas>
+                                <canvas id="wasteRecycledChartElement" height="200"></canvas>
                             </div>
                             <div class="col-6">
-                                <canvas id="wastePieChart" width="200" height="200"></canvas>
+                                <canvas id="remainedWasteChartElement" height="200"></canvas>
                             </div>
                         </div>
                     </div>
