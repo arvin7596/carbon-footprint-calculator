@@ -73,12 +73,12 @@ def report_data():
     global total_emission
     total_emission = electricity_emission + gas_emission + fuel_emission + waste_emission + business_travel_emission
     data = {
-        "electricity_emission": electricity_emission,
-        "gas_emission": gas_emission,
-        "fuel_emission": fuel_emission,
-        "waste_emission": waste_emission,
-        "business_travel_emission": business_travel_emission,
-        "total_emission": total_emission
+        "electricity_emission": round(electricity_emission,3),
+        "gas_emission":round(gas_emission,3) ,
+        "fuel_emission":round(fuel_emission,3) ,
+        "waste_emission":round(waste_emission,3) ,
+        "business_travel_emission":round(business_travel_emission,3) ,
+        "total_emission": round(total_emission,3)
     }
     return jsonify(data)  # Send data as JSON
 
@@ -96,12 +96,12 @@ def create_pdf_with_table():
     # Table headers
     headers = ["Emission Category", "CO2 Emissions (kgCO2)"]
     data = [
-        ["Electricity CO2 Emissions", int(electricity_emission)],
-        ["Gas CO2 Emissions", int(gas_emission)],
-        ["Fuel CO2 Emissions", int(fuel_emission)],
-        ["Waste CO2 Reduction", int(waste_emission)],
-        ["Business Travel CO2 Emissions", int(business_travel_emission)],
-        [" Total CO2 Emissions", int(total_emission)]
+        ["Electricity CO2 Emissions", round(electricity_emission,3)],
+        ["Gas CO2 Emissions", round(gas_emission,3)],
+        ["Fuel CO2 Emissions", round(fuel_emission,3)],
+        ["Waste CO2 Reduction", round(waste_emission,3)],
+        ["Business Travel CO2 Emissions", round(business_travel_emission,3)],
+        [" Total CO2 Emissions", round(total_emission,3)]
     ]
     
     # Header row with background color
