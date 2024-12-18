@@ -24,7 +24,10 @@
                 <button class="nav-link" id="travel-tab" data-bs-toggle="tab" data-bs-target="#travel" type="button"
                     role="tab" aria-controls="travel" aria-selected="false">Travel</button>
             </li>
-
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="report-tab" data-bs-toggle="tab" data-bs-target="#report" type="button"
+                    role="tab" aria-controls="report" aria-selected="false" onclick="getReportData()">Report</button>
+            </li>
         </ul>
         <div class="tab-content" id="energy-tab-content">
             <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="energy-tab">
@@ -123,23 +126,73 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <div class="row justify-content-center">
-
                             <div class="col-10">
                                 <canvas id="travel-emission-chart-element" height="150"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <form class="row">
+                            <div class="col-7 d-flex justify-content-center">
+                                <canvas id="total-emission-chart-element"></canvas>
+                            </div>
+                            <div class="col-5">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Emission Category</th>
+                                            <th scope="col">CO2 Emissions (kgCO2)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Electricity CO2 Emissions</th>
+                                            <td id="electricity-table"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Gas CO2 Emissions</th>
+                                            <td id="gas-table"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fuel CO2 Emissions</th>
+                                            <td id="fuel-table"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Waste CO2 Reduction</th>
+                                            <td id="waste-table"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Business Travel CO2 Emissions </th>
+                                            <td id="travel-table"> - </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Total CO2 Emissions</th>
+                                            <td id="total-table"> - </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div>
+                                        <button class="btn btn-danger" type="button" onclick="createPDF()">Download
+                                            PDF</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-    <script src="chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script.js"></script>
+        <script src="chart.js"></script>
 </body>
 
 </html>
