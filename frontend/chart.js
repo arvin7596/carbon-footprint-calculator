@@ -7,7 +7,7 @@ const energyChartElement = document
 const energyConsumptionChart = new Chart(energyChartElement, {
   type: "bar",
   data: {
-    labels: ["Energy Usage"],
+    labels: ["Energy Category"],
     datasets: [
       {
         label: "Electricity",
@@ -29,7 +29,7 @@ const energyConsumptionChart = new Chart(energyChartElement, {
   options: {
     responsive: true,
     plugins: {
-      title: { display: true, text: "Energy Bar Chart" },
+      title: { display: true, text: "Energy Usage Per Year (kgCO2)" },
       tooltip: { mode: "index", intersect: false },
       legend: { position: "top" },
     },
@@ -46,7 +46,7 @@ const totalEnergyChartElement = document
 const totalEnergyConsumptionChart = new Chart(totalEnergyChartElement, {
   type: "bar",
   data: {
-    labels: ["Energy Usage"],
+    labels: ["Total Energy Usage"],
     datasets: [
       {
         label: "Electricity",
@@ -69,7 +69,7 @@ const totalEnergyConsumptionChart = new Chart(totalEnergyChartElement, {
     plugins: {
       title: {
         display: true,
-        text: "Total Energy Used Per Month",
+        text: "Total Emission Per Year (kgCO2)",
       },
       tooltip: {
         mode: "index",
@@ -100,7 +100,7 @@ const wasteRecycledChartElement = document
 const wasteRecycleChart = new Chart(wasteRecycledChartElement, {
   type: "bar",
   data: {
-    labels: ["Waste"],
+    labels: ["Categories"],
     datasets: [
       { label: "Waste", data: [0], backgroundColor: "#0384ff" },
       { label: "Recycled/Composted", data: [0], backgroundColor: "#007726" },
@@ -109,7 +109,10 @@ const wasteRecycleChart = new Chart(wasteRecycledChartElement, {
   options: {
     responsive: true,
     plugins: {
-      title: { display: true, text: "Waste" },
+      title: {
+        display: true,
+        text: "Waste Generated And Recycled Per Year (kgCO2)",
+      },
       tooltip: { mode: "index", intersect: false },
       legend: { position: "top" },
     },
@@ -127,12 +130,12 @@ const remainedWasteChart = new Chart(remainedWasteChartElement, {
   type: "bar",
   data: {
     labels: ["Waste"],
-    datasets: [{ label: "Waste", data: [0], backgroundColor: "#0384ff" }],
+    datasets: [{ label: "Waste", data: [0], backgroundColor: "#0188ff" }],
   },
   options: {
     responsive: true,
     plugins: {
-      title: { display: true, text: "Waste" },
+      title: { display: true, text: "Waste Emission Per Year (kgCO2)" },
       tooltip: { mode: "index", intersect: false },
       legend: { position: "top" },
     },
@@ -152,12 +155,17 @@ const travelEmissionChart = new Chart(travelEmissionChartElement, {
   type: "bar",
   data: {
     labels: ["Travel"],
-    datasets: [{ label: "Travel", data: [0], backgroundColor: "#c3c3c3" }],
+    datasets: [
+      { label: "Business Travel", data: [0], backgroundColor: "#c3c3c3" },
+    ],
   },
   options: {
     responsive: true,
     plugins: {
-      title: { display: true, text: "Travel" },
+      title: {
+        display: true,
+        text: "Business Travel Emission Per Year (kgCO2)",
+      },
       tooltip: { mode: "index", intersect: false },
       legend: { position: "top" },
     },
@@ -182,13 +190,6 @@ const data = {
         "rgba(255, 206, 86, 0.5)",
         "rgba(75, 192, 192, 0.5)",
         "rgba(153, 102, 255, 0.5)",
-      ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
       ],
       borderWidth: 1,
     },

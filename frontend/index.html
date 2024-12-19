@@ -11,6 +11,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Carbon Footprint Calculator</h1>
+        <!-- Tab Element with Bootstrap classes -->
         <ul class="nav nav-tabs" id="navlist" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="energy-tab" data-bs-toggle="tab" data-bs-target="#energy"
@@ -30,21 +31,23 @@
             </li>
         </ul>
         <div class="tab-content" id="energy-tab-content">
+            <!-- Energy Usage Tab -->
             <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="energy-tab">
+                <!-- Energy Usage Form -->
                 <div class="card mt-4">
                     <div class="card-body">
                         <form class="row g-3">
                             <div class="col-md-4">
-                                <label for="electricity" class="form-label">Electricity</label>
-                                <input type="number" id="electricity" class="form-control mb-2" placeholder="$">
+                                <label for="electricity" class="form-label">Electricity Bill</label>
+                                <input type="number" id="electricity" class="form-control mb-2" placeholder="€/month">
                             </div>
                             <div class="col-md-4">
-                                <label for="gas" class="form-label">Gas</label>
-                                <input type="number" id="gas" class="form-control mb-2" placeholder="$">
+                                <label for="gas" class="form-label">Natural Gas Bill</label>
+                                <input type="number" id="gas" class="form-control mb-2" placeholder="€/month">
                             </div>
                             <div class="col-md-4">
-                                <label for="fuel" class="form-label">Fuel</label>
-                                <input type="number" id="fuel" class="form-control mb-2" placeholder="$">
+                                <label for="fuel" class="form-label">Fuel Bill</label>
+                                <input type="number" id="fuel" class="form-control mb-2" placeholder="€/month">
                             </div>
                             <div class="ml-auto">
                                 <button class="btn btn-primary" type="button"
@@ -53,7 +56,7 @@
                         </form>
                     </div>
                 </div>
-
+                <!-- Energy Usage Report Charts -->
                 <div class="card mt-5">
                     <div class="card-body">
                         <div class="row">
@@ -68,27 +71,28 @@
                 </div>
 
             </div>
+            <!-- Waste Tab -->
             <div class="tab-pane fade" id="waste" role="tabpanel" aria-labelledby="waste-tab">
+                <!-- Waste Form -->
                 <div class="card mt-4">
                     <div class="card-body">
                         <form class="row g-3">
                             <div class="col-md-6">
-                                <label for="waste" class="form-label">Waste generated per month</label>
-                                <input type="number" id="waste-generated" class="form-control mb-2" placeholder="kg">
+                                <label for="waste" class="form-label">Monthly Waste Generated</label>
+                                <input type="number" id="waste-generated" class="form-control mb-2"
+                                    placeholder="kg/month">
                             </div>
                             <div class="col-md-6">
-                                <label for="recycle" class="form-label">Waste recycled or composted per
-                                    month</label>
+                                <label for="recycle" class="form-label">Recycling Percentage</label>
                                 <input type="number" id="recycle" class="form-control mb-2" placeholder="%">
                             </div>
-
                             <div class="ml-auto">
                                 <button class="btn btn-primary" type="button" onclick="submitWaste()">Calculate</button>
                             </div>
                         </form>
                     </div>
                 </div>
-
+                <!-- Waste Report Charts -->
                 <div class="card mt-5">
                     <div class="card-body">
                         <div class="row">
@@ -103,17 +107,20 @@
                 </div>
 
             </div>
+            <!-- Travel Business Emission Tab-->
             <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="travel-tab">
+                <!-- Travel Business Form-->
                 <div class="card mt-4">
                     <div class="card-body">
                         <form class="row g-3">
                             <div class="col-md-6">
-                                <label for="kilometers-traveled" class="form-label">Kilometers traveled per year</label>
+                                <label for="kilometers-traveled" class="form-label">Kilometers Traveled for
+                                    Business</label>
                                 <input type="number" id="kilometers-traveled" class="form-control mb-2"
-                                    placeholder="km">
+                                    placeholder="km/year">
                             </div>
                             <div class="col-md-6">
-                                <label for="vehicles-fuel" class="form-label">Average fuel efficiency </label>
+                                <label for="vehicles-fuel" class="form-label">Vehicle Fuel Efficiency</label>
                                 <input type="number" id="vehicles-fuel" class="form-control mb-2" placeholder="L/100km">
                             </div>
                             <div class="ml-auto">
@@ -123,6 +130,7 @@
                         </form>
                     </div>
                 </div>
+                <!-- Travel Business Emission Report Charts -->
                 <div class="card mt-5">
                     <div class="card-body">
                         <div class="row justify-content-center">
@@ -133,6 +141,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Report Tab -->
             <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
                 <div class="card mt-4">
                     <div class="card-body">
